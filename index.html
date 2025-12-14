@@ -2,331 +2,254 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Adit Jain | Machine Learning Engineer</title>
 
-<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
---primary:#2563eb;
---dark:#0f172a;
---light:#f8fafc;
---text:#1e293b;
---muted:#64748b;
---card:#ffffff;
+--text:#0f172a;
+--muted:#475569;
 --border:#e2e8f0;
+--bg:#ffffff;
+--accent:#2563eb;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:var(--light);color:var(--text);line-height:1.65}
+body{background:var(--bg);color:var(--text);line-height:1.65}
 
-.container{max-width:1100px;margin:auto;padding:0 20px}
+.container{max-width:900px;margin:auto;padding:50px 20px}
 
-/* ================= HEADER ================= */
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ===== HEADER ===== */
 header{
-background:linear-gradient(135deg,#0f172a,#1e293b);
-color:#fff;
-padding:80px 0 90px;
+border-bottom:1px solid var(--border);
+padding-bottom:32px;
+margin-bottom:40px;
 }
-.header-grid{
-display:grid;
-grid-template-columns:1fr 2fr;
-gap:40px;
-align-items:center;
+
+header h1{
+font-size:2.4rem;
+font-weight:700;
 }
-.profile-img{
-width:180px;height:180px;border-radius:50%;
-border:4px solid rgba(255,255,255,.2);
+
+header h2{
+font-size:1.2rem;
+font-weight:500;
+color:var(--muted);
+margin-top:6px;
 }
-header h1{font-size:2.8rem;font-weight:700}
-header h2{font-size:1.3rem;font-weight:500;margin-top:8px;opacity:.9}
-header p{margin-top:12px;color:#cbd5f5}
+
+.header-meta{
+margin-top:14px;
+font-size:.95rem;
+color:var(--muted);
+}
 
 .header-links{
-margin-top:18px
+margin-top:12px;
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+font-size:.95rem;
 }
-.header-links a{
-color:#fff;margin-right:14px;font-size:1.4rem;transition:.3s
-}
-.header-links a:hover{color:#60a5fa}
 
-/* ================= SECTIONS ================= */
-section{padding:70px 0}
+/* ===== SECTION ===== */
+section{margin-bottom:48px}
+
 .section-title{
-font-size:2.1rem;font-weight:700;margin-bottom:30px;color:var(--dark)
+font-size:1.4rem;
+font-weight:600;
+margin-bottom:18px;
+border-bottom:1px solid var(--border);
+padding-bottom:6px;
 }
 
-/* ================= ABOUT ================= */
-.about p{
-max-width:900px;color:var(--muted);margin-bottom:16px
+/* ===== TEXT ===== */
+p{margin-bottom:12px;color:var(--muted)}
+
+/* ===== EXPERIENCE ===== */
+.item{margin-bottom:26px}
+
+.item h3{
+font-size:1.05rem;
+font-weight:600;
 }
 
-/* ================= TIMELINE ================= */
-.timeline{border-left:3px solid var(--primary);padding-left:30px}
-.timeline-item{margin-bottom:40px}
-.timeline-item h3{color:var(--primary);margin-bottom:4px}
-.timeline-item span{font-size:.9rem;color:var(--muted)}
-.timeline-item ul{margin-top:10px}
-.timeline-item li{margin-left:18px;color:var(--muted);margin-bottom:6px}
+.item span{
+font-size:.9rem;
+color:var(--muted);
+}
 
-/* ================= SKILLS ================= */
-.skills-grid{
+.item ul{
+margin-top:8px;
+padding-left:18px;
+}
+
+.item li{
+margin-bottom:6px;
+color:var(--muted);
+}
+
+/* ===== SKILLS ===== */
+.skills{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:24px
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
-.skill-box{
-background:var(--card);
-border:1px solid var(--border);
-padding:24px;border-radius:12px
-}
-.skill-box h3{margin-bottom:14px;color:var(--primary)}
-.skill-box li{list-style:none;color:var(--muted);margin-bottom:6px}
 
-/* ================= PROJECTS ================= */
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:28px
+.skills ul{padding-left:18px}
+
+/* ===== PROJECTS ===== */
+.project{
+padding:16px 0;
+border-bottom:1px solid var(--border);
 }
-.project-card{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:14px;
-overflow:hidden;
-transition:.25s
+
+.project:last-child{border-bottom:none}
+
+.project h3{
+font-size:1.05rem;
+font-weight:600;
 }
-.project-card:hover{transform:translateY(-4px)}
-.project-img{height:180px;background:#e5e7eb}
-.project-body{padding:22px}
-.project-body h3{color:var(--primary);margin-bottom:6px}
-.project-body p{color:var(--muted);font-size:.95rem;margin-bottom:12px}
+
+.project small{
+color:var(--muted);
+font-size:.85rem;
+}
+
 .tech{
-display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px
-}
-.tech span{
-background:#e0e7ff;color:#1e40af;
-font-size:.75rem;padding:4px 10px;border-radius:20px
-}
-.project-body li{
-margin-left:16px;color:var(--muted);margin-bottom:5px;font-size:.95rem
+margin:6px 0;
+font-size:.85rem;
+color:#334155;
 }
 
-/* ================= CONTACT ================= */
-.contact-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px
-}
-.contact-box{
-background:var(--card);
-border:1px solid var(--border);
-padding:26px;border-radius:12px;text-align:center
-}
-.contact-box i{font-size:2rem;color:var(--primary);margin-bottom:10px}
-
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 footer{
-background:#020617;color:#94a3b8;text-align:center;padding:24px
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-.header-grid{grid-template-columns:1fr;text-align:center}
+border-top:1px solid var(--border);
+padding-top:24px;
+font-size:.85rem;
+color:var(--muted);
+text-align:center;
 }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<!-- ================= HEADER ================= -->
 <header>
-<div class="container header-grid">
-<img src="images/Adit Jain's photo.png" class="profile-img">
-<div>
 <h1>Adit Jain</h1>
-<h2>Machine Learning Engineer | Backend Developer</h2>
-<p>IBM SDE Intern • AI & ML Intern • Healthcare & FinTech ML Systems</p>
+<h2>Machine Learning Engineer · Backend Developer</h2>
+
+<div class="header-meta">
+IBM SDE Intern · AI & ML Intern · Healthcare & FinTech ML Systems
+</div>
+
 <div class="header-links">
-<a href="https://github.com/Adit-2005"><i class="fab fa-github"></i></a>
-<a href="https://linkedin.com/in/adit-jain2005"><i class="fab fa-linkedin"></i></a>
-<a href="mailto:aditjain042@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://leetcode.com/u/Adit_Jain/"><i class="fas fa-code"></i></a>
-</div>
-</div>
+<span>📧 <a href="mailto:aditjain042@gmail.com">aditjain042@gmail.com</a></span>
+<span>🔗 <a href="https://linkedin.com/in/adit-jain2005">LinkedIn</a></span>
+<span>💻 <a href="https://github.com/Adit-2005">GitHub</a></span>
+<span>🧠 <a href="https://leetcode.com/u/Adit_Jain/">LeetCode</a></span>
 </div>
 </header>
 
-<!-- ================= ABOUT ================= -->
 <section>
-<div class="container about">
-<h2 class="section-title">About</h2>
-<p>I am a Computer Science Engineering undergraduate with strong experience in Machine Learning, backend development, and real-world AI systems.</p>
-<p>I have worked as an SDE Intern at IBM and as an AI & ML Intern, building production-grade ML solutions such as hospital readmission prediction and fraud detection systems processing large-scale data.</p>
-<p>My strengths include Python, Flask, ML model development, data preprocessing, feature engineering, and deploying scalable REST APIs.</p>
-</div>
+<h3 class="section-title">About</h3>
+<p>
+Computer Science Engineering undergraduate with strong hands-on experience in Machine Learning,
+backend development, and real-world AI systems.
+</p>
+<p>
+Worked as an SDE Intern at IBM and AI & ML Intern, building production-grade solutions including
+hospital readmission risk prediction and fraud detection platforms handling large-scale data.
+</p>
 </section>
 
-<!-- ================= EXPERIENCE ================= -->
 <section>
-<div class="container">
-<h2 class="section-title">Experience</h2>
-<div class="timeline">
+<h3 class="section-title">Experience</h3>
 
-<div class="timeline-item">
-<h3>SDE Intern – IBM</h3>
-<span>Jun 2025 – Jul 2025 | Remote</span>
+<div class="item">
+<h3>SDE Intern — IBM</h3>
+<span>Jun 2025 – Jul 2025 · Remote</span>
 <ul>
-<li>Developed hospital readmission risk prediction system (93% precision)</li>
-<li>Built RESTful APIs using Python & Flask</li>
-<li>Improved feature engineering pipeline by 15%</li>
-<li>Worked with healthcare datasets across 3 hospitals</li>
+<li>Built hospital readmission prediction system (93% precision)</li>
+<li>Developed REST APIs using Python & Flask</li>
+<li>Improved feature engineering reliability by 15%</li>
+<li>Worked with datasets from 3 hospitals</li>
 </ul>
 </div>
 
-<div class="timeline-item">
-<h3>AI & ML Intern – Global Next Consulting</h3>
-<span>Jul 2025 – Aug 2025 | Remote</span>
+<div class="item">
+<h3>AI & ML Intern — Global Next Consulting</h3>
+<span>Jul 2025 – Aug 2025 · Remote</span>
 <ul>
 <li>Built fraud detection system analyzing 50,000+ transactions</li>
 <li>Achieved 92% accuracy using ML classification models</li>
 <li>Designed dashboards using Streamlit & Plotly</li>
-<li>Deployed system on Streamlit Cloud</li>
+<li>Deployed solution on Streamlit Cloud</li>
 </ul>
 </div>
-
-</div>
-</div>
 </section>
 
-<!-- ================= SKILLS ================= -->
 <section>
-<div class="container">
-<h2 class="section-title">Technical Skills</h2>
-<div class="skills-grid">
-
-<div class="skill-box">
-<h3>Programming</h3>
+<h3 class="section-title">Technical Skills</h3>
+<div class="skills">
+<ul>
 <li>Python</li><li>Java</li><li>C / C++</li><li>MySQL</li>
-</div>
-
-<div class="skill-box">
-<h3>Machine Learning</h3>
-<li>Random Forest</li><li>Logistic Regression</li>
-<li>XGBoost</li><li>NLP</li>
-</div>
-
-<div class="skill-box">
-<h3>Frameworks</h3>
-<li>Flask</li><li>Scikit-learn</li>
-<li>Pandas</li><li>NumPy</li>
-</div>
-
-</div>
+</ul>
+<ul>
+<li>Machine Learning</li><li>Random Forest</li><li>XGBoost</li><li>NLP</li>
+</ul>
+<ul>
+<li>Flask</li><li>Scikit-learn</li><li>Pandas</li><li>NumPy</li>
+</ul>
 </div>
 </section>
 
-<!-- ================= PROJECTS ================= -->
 <section>
-<div class="container">
-<h2 class="section-title">Projects</h2>
-<div class="projects-grid">
+<h3 class="section-title">Projects</h3>
 
-<!-- Billing -->
-<div class="project-card">
-<div class="project-img"></div>
-<div class="project-body">
-<h3>Billing Management System</h3>
-<p>Financial transaction and reporting system.</p>
-<div class="tech">
-<span>Java</span><span>MySQL</span>
-</div>
-<li>1000+ monthly transactions</li>
-<li>Profit & loss analytics</li>
-<li>Role-based access control</li>
-</div>
-</div>
-
-<!-- Patient -->
-<div class="project-card">
-<div class="project-img"></div>
-<div class="project-body">
+<div class="project">
 <h3>Patient Readmission Risk Detection</h3>
-<p>ML system predicting 30-day readmissions.</p>
-<div class="tech">
-<span>Python</span><span>Flask</span><span>ML</span>
-</div>
-<li>93% precision</li>
-<li>REST API deployment</li>
-<li>Healthcare datasets</li>
-</div>
+<small>Python · Flask · Machine Learning</small>
+<div class="tech">93% precision · REST APIs · Healthcare data</div>
 </div>
 
-<!-- Disease -->
-<div class="project-card">
-<div class="project-img"></div>
-<div class="project-body">
-<h3>Disease Prediction & Recommendation</h3>
-<p>Symptom-based disease diagnosis system.</p>
-<div class="tech">
-<span>Python</span><span>NLP</span>
-</div>
-<li>88% accuracy</li>
-<li>Fuzzy matching</li>
-<li>Medicine recommendations</li>
-</div>
+<div class="project">
+<h3>Disease Prediction & Medical Recommendation System</h3>
+<small>Python · NLP · Random Forest</small>
+<div class="tech">88% accuracy · Fuzzy matching · Medical datasets</div>
 </div>
 
-<!-- E-commerce -->
-<div class="project-card">
-<div class="project-img"></div>
-<div class="project-body">
+<div class="project">
+<h3>Billing Management System</h3>
+<small>Java · MySQL</small>
+<div class="tech">1000+ transactions · Profit/Loss reports · RBAC</div>
+</div>
+
+<div class="project">
 <h3>E-commerce Website</h3>
-<p>PC accessories online store.</p>
-<div class="tech">
-<span>HTML</span><span>JS</span><span>MySQL</span>
-</div>
-<li>Authentication system</li>
-<li>Product filtering</li>
-</div>
+<small>HTML · CSS · JavaScript · MySQL</small>
+<div class="tech">Authentication · Search · Payments</div>
 </div>
 
-<!-- Segmentation -->
-<div class="project-card">
-<div class="project-img"></div>
-<div class="project-body">
+<div class="project">
 <h3>Customer Segmentation Analysis</h3>
-<p>Data-driven customer clustering project.</p>
-<div class="tech">
-<span>Python</span><span>ML</span>
-</div>
-<li>K-means clustering</li>
-<li>Business insights</li>
-</div>
+<small>Python · Pandas · Scikit-learn</small>
+<div class="tech">K-means clustering · Business insights</div>
 </div>
 
-</div>
-</div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section>
-<div class="container">
-<h2 class="section-title">Contact</h2>
-<div class="contact-grid">
-<div class="contact-box"><i class="fas fa-envelope"></i><p>aditjain042@gmail.com</p></div>
-<div class="contact-box"><i class="fas fa-phone"></i><p>+91 7300115590</p></div>
-<div class="contact-box"><i class="fab fa-linkedin"></i><p>linkedin.com/in/adit-jain2005</p></div>
-</div>
-</div>
 </section>
 
 <footer>
-<p>© 2025 Adit Jain</p>
+© 2025 Adit Jain · Designed as a living resume
 </footer>
 
+</div>
 </body>
 </html>
