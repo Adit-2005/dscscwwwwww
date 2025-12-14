@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adit Jain | Machine Learning Engineer</title>
 
-<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -33,11 +32,10 @@
 body{
 background:var(--bg);
 color:var(--text);
-transition:.35s;
+transition:.3s;
 line-height:1.7;
 }
 
-/* ================= GLOBAL ================= */
 .container{
 max-width:1100px;
 margin:auto;
@@ -49,8 +47,19 @@ border-top:1px solid var(--border);
 }
 
 .section-title{
-font-size:2rem;
-margin-bottom:40px;
+font-size:2.4rem;
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title::after{
+content:'';
+display:block;
+width:80px;
+height:4px;
+margin:14px auto 0;
+background:linear-gradient(90deg,var(--accent),#a855f7);
+border-radius:3px;
 }
 
 /* ================= THEME TOGGLE ================= */
@@ -88,7 +97,6 @@ font-weight:700;
 .hero h2{
 margin-top:10px;
 color:var(--muted);
-font-weight:500;
 }
 
 .hero p{
@@ -124,11 +132,8 @@ border-color:var(--accent);
 color:#fff;
 }
 
-.btn:hover{
-transform:translateY(-3px);
-}
+.btn:hover{transform:translateY(-3px)}
 
-/* ===== PHOTO ===== */
 .profile-photo{
 width:260px;
 height:260px;
@@ -136,6 +141,62 @@ border-radius:22px;
 object-fit:cover;
 border:1px solid var(--border);
 box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+/* ================= ABOUT ================= */
+.about-wrapper{
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about-text h3{
+font-size:1.8rem;
+margin-bottom:16px;
+}
+
+.about-text span{
+color:var(--accent);
+}
+
+.about-text p{
+color:var(--muted);
+margin-bottom:16px;
+max-width:520px;
+}
+
+.about-skills{
+position:relative;
+height:360px;
+}
+
+.skill-bubble{
+position:absolute;
+padding:10px 18px;
+border-radius:999px;
+background:linear-gradient(135deg,#3b82f6,#6366f1);
+color:#fff;
+font-size:.9rem;
+font-weight:500;
+animation:float 6s ease-in-out infinite;
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.skill-bubble:nth-child(1){top:20px;left:40px}
+.skill-bubble:nth-child(2){top:80px;left:160px}
+.skill-bubble:nth-child(3){top:140px;left:20px}
+.skill-bubble:nth-child(4){top:40px;right:40px}
+.skill-bubble:nth-child(5){top:120px;right:120px}
+.skill-bubble:nth-child(6){top:200px;right:40px}
+.skill-bubble:nth-child(7){bottom:40px;left:120px}
+.skill-bubble:nth-child(8){bottom:80px;right:140px}
+.skill-bubble:nth-child(9){bottom:20px;right:20px}
+.skill-bubble:nth-child(10){top:180px;left:200px}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
 }
 
 /* ================= PROJECTS ================= */
@@ -159,14 +220,8 @@ transform:translateY(-6px);
 border-color:var(--accent);
 }
 
-.project-card h3{
-color:var(--accent);
-margin-bottom:6px;
-}
-
-.project-card small{
-color:var(--muted);
-}
+.project-card h3{color:var(--accent)}
+.project-card small{color:var(--muted)}
 
 /* ================= MODAL ================= */
 .modal{
@@ -199,17 +254,8 @@ font-size:1.5rem;
 cursor:pointer;
 }
 
-.modal-content h3{
-color:var(--accent);
-margin-bottom:12px;
-}
-
-.modal-content p{
-color:var(--muted);
-margin-bottom:16px;
-}
-
 .github-btn{
+margin-top:16px;
 display:inline-flex;
 align-items:center;
 gap:8px;
@@ -218,75 +264,26 @@ border-radius:10px;
 background:var(--accent);
 color:#fff;
 text-decoration:none;
-font-weight:500;
-transition:.3s;
-}
-
-.github-btn:hover{
-transform:translateY(-3px);
-opacity:.9;
-}
-
-/* ================= CONTACT ================= */
-.contact{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:24px;
-}
-
-.contact-card{
-background:var(--card);
-border:1px solid var(--border);
-padding:30px;
-border-radius:18px;
-text-align:center;
-cursor:pointer;
-transition:.3s;
-}
-
-.contact-card:hover{
-transform:translateY(-5px);
-border-color:var(--accent);
-}
-
-.contact-card i{
-font-size:2rem;
-color:var(--accent);
-margin-bottom:10px;
-}
-
-/* ================= FOOTER ================= */
-footer{
-border-top:1px solid var(--border);
-text-align:center;
-padding:40px 20px;
-color:var(--muted);
 }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:900px){
-.hero{
-grid-template-columns:1fr;
-text-align:center;
-}
-.profile-photo{
-margin:auto;
-}
-.hero-actions{
-justify-content:center;
-}
+.hero,.about-wrapper{grid-template-columns:1fr;text-align:center}
+.profile-photo{margin:auto}
+.hero-actions{justify-content:center}
+.about-text p{margin:auto}
+.about-skills{margin-top:40px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- THEME TOGGLE -->
 <div class="toggle" onclick="toggleTheme()">
 <i class="fas fa-adjust"></i>
 </div>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <header>
 <div class="container hero">
 <div>
@@ -296,160 +293,112 @@ justify-content:center;
 IBM SDE Intern & AI/ML Intern with experience building production-grade
 machine learning systems in healthcare and fintech.
 </p>
-
 <div class="hero-actions">
-<a class="btn primary" href="#projects">
-<i class="fas fa-diagram-project"></i> Projects
-</a>
-
-<a class="btn" href="resume/Adit_Jain_Resume.pdf" download>
-<i class="fas fa-file-download"></i> Resume
-</a>
+<a class="btn primary" href="#projects">Projects</a>
+<a class="btn" href="resume/Adit_Jain_Resume.pdf" download>Resume</a>
 </div>
 </div>
-
-<img src="images/profile.jpg" alt="Adit Jain" class="profile-photo">
+<img src="images/profile.jpg" class="profile-photo">
 </div>
 </header>
 
-<!-- ================= PROJECTS ================= -->
+<!-- ABOUT -->
+<section>
+<div class="container about-wrapper">
+<div class="about-text">
+<h2 class="section-title">About Me</h2>
+<h3>Hello, I'm <span>Adit Jain</span></h3>
+
+<p>
+I'm a Computer Science Engineering student at the University of Petroleum
+and Energy Studies, Dehradun, with a strong interest in backend development,
+machine learning, and problem solving.
+</p>
+
+<p>
+My journey in technology is driven by curiosity and the desire to build
+impactful real-world solutions. I enjoy working on challenging problems
+that push me to grow continuously.
+</p>
+
+<p>
+With solid foundations in data structures and algorithms and hands-on
+experience through industry internships, I focus on building reliable,
+scalable, and meaningful systems.
+</p>
+</div>
+
+<div class="about-skills">
+<div class="skill-bubble">Python</div>
+<div class="skill-bubble">Java</div>
+<div class="skill-bubble">C++</div>
+<div class="skill-bubble">Machine Learning</div>
+<div class="skill-bubble">Flask</div>
+<div class="skill-bubble">Scikit-learn</div>
+<div class="skill-bubble">Pandas</div>
+<div class="skill-bubble">NLP</div>
+<div class="skill-bubble">Web Dev</div>
+<div class="skill-bubble">AI</div>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
 <section id="projects">
 <div class="container">
 <h2 class="section-title">Projects</h2>
-
 <div class="projects">
 
 <div class="project-card" onclick="openModal(
 'Patient Readmission Risk Detection',
-'Built a machine learning system to predict 30-day hospital readmissions. Used Random Forest, Logistic Regression, and XGBoost models achieving 93% precision. Deployed as Flask-based REST APIs for real-time hospital workflows.',
+'ML system predicting 30-day hospital readmissions using Random Forest and XGBoost with 93% precision.',
 'https://github.com/Adit-2005/Patient-Readmission-Risk-Detection'
 )">
 <h3>Patient Readmission Risk Detection</h3>
-<small>Python · Flask · Machine Learning</small>
+<small>Python · Flask · ML</small>
 </div>
 
 <div class="project-card" onclick="openModal(
-'Disease Prediction & Medical Recommendation',
-'Developed an AI-powered system that predicts diseases from symptoms using NLP and fuzzy matching. Achieved 88% accuracy with a Random Forest model.',
+'Disease Prediction & Recommendation',
+'AI-based disease prediction using NLP and fuzzy matching achieving 88% accuracy.',
 'https://github.com/Adit-2005/Medipath-Medicine-Recommendation-system'
 )">
-<h3>Disease Prediction & Medical Recommendation</h3>
-<small>Python · NLP · Random Forest</small>
-</div>
-
-<div class="project-card" onclick="openModal(
-'Billing Management System',
-'Designed a billing platform handling 1000+ monthly transactions with profit/loss analytics, reporting, and optimized database queries.',
-'https://github.com/Adit-2005/Billing-Management-System'
-)">
-<h3>Billing Management System</h3>
-<small>Java · MySQL</small>
-</div>
-
-<div class="project-card" onclick="openModal(
-'E-commerce Website',
-'Built a full-stack e-commerce platform with authentication, product search, cart, and checkout features.',
-'#'
-)">
-<h3>E-commerce Website</h3>
-<small>HTML · CSS · JavaScript</small>
-</div>
-
-<div class="project-card" onclick="openModal(
-'Customer Segmentation Analysis',
-'Performed customer segmentation using K-means clustering to identify purchasing patterns and generate business insights.',
-'#'
-)">
-<h3>Customer Segmentation Analysis</h3>
-<small>Python · Scikit-learn</small>
+<h3>Disease Prediction & Recommendation</h3>
+<small>Python · NLP</small>
 </div>
 
 </div>
 </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section>
-<div class="container">
-<h2 class="section-title">Contact</h2>
-
-<div class="contact">
-<div class="contact-card" onclick="location.href='mailto:aditjain042@gmail.com'">
-<i class="fas fa-envelope"></i>
-<p>Email</p>
-</div>
-
-<div class="contact-card" onclick="location.href='tel:+917300115590'">
-<i class="fas fa-phone"></i>
-<p>Call</p>
-</div>
-
-<div class="contact-card" onclick="window.open('https://www.linkedin.com/in/adit-jain2005','_blank')">
-<i class="fab fa-linkedin"></i>
-<p>LinkedIn</p>
-</div>
-</div>
-</div>
-</section>
-
-<footer>
-© 2025 Adit Jain · Portfolio
-</footer>
-
-<!-- ================= MODAL ================= -->
+<!-- MODAL -->
 <div class="modal" id="modal">
 <div class="modal-content">
 <span class="close" onclick="closeModal()">&times;</span>
 <h3 id="modalTitle"></h3>
 <p id="modalDesc"></p>
-<a id="modalGithub" class="github-btn" target="_blank">
-<i class="fab fa-github"></i> View on GitHub
-</a>
+<a id="modalGithub" class="github-btn" target="_blank">GitHub</a>
 </div>
 </div>
 
 <script>
-/* ===== THEME ===== */
 function toggleTheme(){
 document.body.classList.toggle('light');
-localStorage.setItem(
-'theme',
-document.body.classList.contains('light')?'light':'dark'
-);
+localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');
 }
-if(localStorage.getItem('theme')==='light'){
-document.body.classList.add('light');
-}
+if(localStorage.getItem('theme')==='light')document.body.classList.add('light');
 
-/* ===== MODAL ===== */
-function openModal(title, desc, github){
-document.getElementById('modalTitle').innerText = title;
-document.getElementById('modalDesc').innerText = desc;
-
-const btn = document.getElementById('modalGithub');
-if(github && github !== '#'){
-btn.href = github;
-btn.style.display = 'inline-flex';
-}else{
-btn.style.display = 'none';
+function openModal(title,desc,link){
+modal.style.display='flex';
+modalTitle.innerText=title;
+modalDesc.innerText=desc;
+modalGithub.href=link;
 }
 
-document.getElementById('modal').style.display = 'flex';
-}
+function closeModal(){modal.style.display='none'}
 
-function closeModal(){
-document.getElementById('modal').style.display = 'none';
-}
-
-/* ESC KEY CLOSE */
-document.addEventListener('keydown', e=>{
-if(e.key === 'Escape') closeModal();
-});
-
-/* CLICK OUTSIDE CLOSE */
-document.getElementById('modal').addEventListener('click', e=>{
-if(e.target.id === 'modal') closeModal();
-});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
 </script>
 
 </body>
