@@ -1,255 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adit Jain | Machine Learning Engineer</title>
 
+<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
---text:#0f172a;
---muted:#475569;
---border:#e2e8f0;
---bg:#ffffff;
---accent:#2563eb;
+--bg:#0b0f19;
+--card:#111827;
+--text:#e5e7eb;
+--muted:#9ca3af;
+--accent:#3b82f6;
+--border:#1f2937;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:var(--bg);color:var(--text);line-height:1.65}
+body{
+background:linear-gradient(180deg,#0b0f19,#020617);
+color:var(--text);
+line-height:1.7;
+overflow-x:hidden;
+}
 
-.container{max-width:900px;margin:auto;padding:50px 20px}
+.container{max-width:1100px;margin:auto;padding:80px 20px}
 
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
+/* ===== ANIMATION BASE ===== */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
 
 /* ===== HEADER ===== */
 header{
-border-bottom:1px solid var(--border);
-padding-bottom:32px;
-margin-bottom:40px;
+min-height:100vh;
+display:flex;
+align-items:center;
+background:
+radial-gradient(circle at 20% 20%,rgba(59,130,246,.15),transparent 40%),
+radial-gradient(circle at 80% 80%,rgba(99,102,241,.15),transparent 40%);
 }
 
-header h1{
-font-size:2.4rem;
+.hero{
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:3.4rem;
 font-weight:700;
+letter-spacing:-1px;
 }
 
-header h2{
-font-size:1.2rem;
+.hero h2{
+font-size:1.4rem;
 font-weight:500;
 color:var(--muted);
-margin-top:6px;
+margin-top:10px;
 }
 
-.header-meta{
-margin-top:14px;
-font-size:.95rem;
+.hero p{
+margin-top:18px;
+max-width:520px;
 color:var(--muted);
 }
 
-.header-links{
-margin-top:12px;
+.hero-actions{
+margin-top:26px;
 display:flex;
 gap:16px;
 flex-wrap:wrap;
-font-size:.95rem;
+}
+
+.btn{
+padding:12px 22px;
+border-radius:10px;
+border:1px solid var(--border);
+background:transparent;
+color:var(--text);
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+.btn.primary{
+background:var(--accent);
+border-color:var(--accent);
+}
+.btn:hover{
+transform:translateY(-3px);
 }
 
 /* ===== SECTION ===== */
-section{margin-bottom:48px}
-
-.section-title{
-font-size:1.4rem;
-font-weight:600;
-margin-bottom:18px;
-border-bottom:1px solid var(--border);
-padding-bottom:6px;
+section{
+border-top:1px solid var(--border);
 }
-
-/* ===== TEXT ===== */
-p{margin-bottom:12px;color:var(--muted)}
+.section-title{
+font-size:2rem;
+margin-bottom:40px;
+}
 
 /* ===== EXPERIENCE ===== */
-.item{margin-bottom:26px}
-
-.item h3{
-font-size:1.05rem;
-font-weight:600;
+.timeline{
+display:grid;
+gap:30px;
 }
-
-.item span{
-font-size:.9rem;
-color:var(--muted);
+.exp-card{
+background:var(--card);
+border:1px solid var(--border);
+padding:28px;
+border-radius:16px;
+transition:.4s;
 }
-
-.item ul{
-margin-top:8px;
-padding-left:18px;
+.exp-card:hover{
+transform:translateY(-6px);
+border-color:var(--accent);
 }
-
-.item li{
-margin-bottom:6px;
-color:var(--muted);
-}
+.exp-card h3{color:var(--accent)}
+.exp-card span{color:var(--muted);font-size:.9rem}
+.exp-card ul{margin-top:12px}
+.exp-card li{margin-left:18px;color:var(--muted);margin-bottom:6px}
 
 /* ===== SKILLS ===== */
 .skills{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:24px;
 }
-
-.skills ul{padding-left:18px}
+.skill-card{
+background:var(--card);
+border:1px solid var(--border);
+padding:26px;
+border-radius:16px;
+transition:.4s;
+}
+.skill-card:hover{
+transform:translateY(-6px);
+border-color:var(--accent);
+}
+.skill-card h3{margin-bottom:14px;color:var(--accent)}
+.skill-card li{list-style:none;color:var(--muted);margin-bottom:6px}
 
 /* ===== PROJECTS ===== */
-.project{
-padding:16px 0;
-border-bottom:1px solid var(--border);
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
 }
-
-.project:last-child{border-bottom:none}
-
-.project h3{
-font-size:1.05rem;
-font-weight:600;
+.project-card{
+background:linear-gradient(180deg,#0f172a,#020617);
+border:1px solid var(--border);
+padding:26px;
+border-radius:18px;
+transition:.5s;
+position:relative;
+overflow:hidden;
 }
-
-.project small{
-color:var(--muted);
-font-size:.85rem;
+.project-card::before{
+content:'';
+position:absolute;
+inset:0;
+background:radial-gradient(circle at top left,rgba(59,130,246,.15),transparent 60%);
+opacity:0;
+transition:.5s;
 }
+.project-card:hover::before{opacity:1}
+.project-card:hover{
+transform:translateY(-10px);
+border-color:var(--accent);
+}
+.project-card h3{color:var(--accent)}
+.project-card small{color:var(--muted)}
+.project-card ul{margin-top:12px}
+.project-card li{margin-left:18px;color:var(--muted);margin-bottom:6px}
 
-.tech{
-margin:6px 0;
-font-size:.85rem;
-color:#334155;
+/* ===== CONTACT ===== */
+.contact{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:24px;
+}
+.contact-card{
+background:var(--card);
+border:1px solid var(--border);
+padding:30px;
+border-radius:16px;
+text-align:center;
+transition:.4s;
+}
+.contact-card:hover{
+transform:translateY(-6px);
+border-color:var(--accent);
+}
+.contact-card i{
+font-size:2rem;
+color:var(--accent);
+margin-bottom:10px;
 }
 
 /* ===== FOOTER ===== */
 footer{
 border-top:1px solid var(--border);
-padding-top:24px;
-font-size:.85rem;
-color:var(--muted);
 text-align:center;
+padding:40px 20px;
+color:var(--muted);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+.hero{grid-template-columns:1fr}
+.hero h1{font-size:2.6rem}
 }
 </style>
 </head>
 
 <body>
-<div class="container">
 
+<!-- HERO -->
 <header>
+<div class="container hero reveal">
+<div>
 <h1>Adit Jain</h1>
 <h2>Machine Learning Engineer · Backend Developer</h2>
-
-<div class="header-meta">
-IBM SDE Intern · AI & ML Intern · Healthcare & FinTech ML Systems
+<p>
+IBM SDE Intern & AI/ML Intern with hands-on experience building
+production-grade ML systems in healthcare and fintech.
+</p>
+<div class="hero-actions">
+<a class="btn primary" href="#projects">View Projects</a>
+<a class="btn" href="mailto:aditjain042@gmail.com">Contact Me</a>
 </div>
-
-<div class="header-links">
-<span>📧 <a href="mailto:aditjain042@gmail.com">aditjain042@gmail.com</a></span>
-<span>🔗 <a href="https://linkedin.com/in/adit-jain2005">LinkedIn</a></span>
-<span>💻 <a href="https://github.com/Adit-2005">GitHub</a></span>
-<span>🧠 <a href="https://leetcode.com/u/Adit_Jain/">LeetCode</a></span>
+</div>
 </div>
 </header>
 
+<!-- EXPERIENCE -->
 <section>
-<h3 class="section-title">About</h3>
-<p>
-Computer Science Engineering undergraduate with strong hands-on experience in Machine Learning,
-backend development, and real-world AI systems.
-</p>
-<p>
-Worked as an SDE Intern at IBM and AI & ML Intern, building production-grade solutions including
-hospital readmission risk prediction and fraud detection platforms handling large-scale data.
-</p>
-</section>
+<div class="container reveal">
+<h2 class="section-title">Experience</h2>
+<div class="timeline">
 
-<section>
-<h3 class="section-title">Experience</h3>
-
-<div class="item">
+<div class="exp-card">
 <h3>SDE Intern — IBM</h3>
-<span>Jun 2025 – Jul 2025 · Remote</span>
+<span>Jun 2025 – Jul 2025</span>
 <ul>
 <li>Built hospital readmission prediction system (93% precision)</li>
-<li>Developed REST APIs using Python & Flask</li>
+<li>Developed Flask-based REST APIs</li>
 <li>Improved feature engineering reliability by 15%</li>
 <li>Worked with datasets from 3 hospitals</li>
 </ul>
 </div>
 
-<div class="item">
+<div class="exp-card">
 <h3>AI & ML Intern — Global Next Consulting</h3>
-<span>Jul 2025 – Aug 2025 · Remote</span>
+<span>Jul 2025 – Aug 2025</span>
 <ul>
-<li>Built fraud detection system analyzing 50,000+ transactions</li>
-<li>Achieved 92% accuracy using ML classification models</li>
-<li>Designed dashboards using Streamlit & Plotly</li>
-<li>Deployed solution on Streamlit Cloud</li>
+<li>Fraud detection on 50,000+ transactions</li>
+<li>92% accuracy using ML classifiers</li>
+<li>Built dashboards with Streamlit & Plotly</li>
 </ul>
+</div>
+
+</div>
 </div>
 </section>
 
+<!-- SKILLS -->
 <section>
-<h3 class="section-title">Technical Skills</h3>
+<div class="container reveal">
+<h2 class="section-title">Technical Skills</h2>
 <div class="skills">
-<ul>
-<li>Python</li><li>Java</li><li>C / C++</li><li>MySQL</li>
-</ul>
-<ul>
-<li>Machine Learning</li><li>Random Forest</li><li>XGBoost</li><li>NLP</li>
-</ul>
-<ul>
-<li>Flask</li><li>Scikit-learn</li><li>Pandas</li><li>NumPy</li>
-</ul>
+<div class="skill-card"><h3>Programming</h3><li>Python</li><li>Java</li><li>C / C++</li><li>MySQL</li></div>
+<div class="skill-card"><h3>Machine Learning</h3><li>Random Forest</li><li>XGBoost</li><li>NLP</li></div>
+<div class="skill-card"><h3>Frameworks</h3><li>Flask</li><li>Scikit-learn</li><li>Pandas</li></div>
+</div>
 </div>
 </section>
 
-<section>
-<h3 class="section-title">Projects</h3>
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container reveal">
+<h2 class="section-title">Projects</h2>
+<div class="projects">
 
-<div class="project">
+<div class="project-card">
 <h3>Patient Readmission Risk Detection</h3>
-<small>Python · Flask · Machine Learning</small>
-<div class="tech">93% precision · REST APIs · Healthcare data</div>
+<small>Python · Flask · ML</small>
+<ul>
+<li>93% precision</li>
+<li>REST API deployment</li>
+<li>Healthcare datasets</li>
+</ul>
 </div>
 
-<div class="project">
-<h3>Disease Prediction & Medical Recommendation System</h3>
+<div class="project-card">
+<h3>Disease Prediction & Recommendation</h3>
 <small>Python · NLP · Random Forest</small>
-<div class="tech">88% accuracy · Fuzzy matching · Medical datasets</div>
+<ul>
+<li>88% accuracy</li>
+<li>Fuzzy symptom matching</li>
+</ul>
 </div>
 
-<div class="project">
+<div class="project-card">
 <h3>Billing Management System</h3>
 <small>Java · MySQL</small>
-<div class="tech">1000+ transactions · Profit/Loss reports · RBAC</div>
+<ul>
+<li>1000+ transactions</li>
+<li>Profit/Loss analytics</li>
+</ul>
 </div>
 
-<div class="project">
+<div class="project-card">
 <h3>E-commerce Website</h3>
-<small>HTML · CSS · JavaScript · MySQL</small>
-<div class="tech">Authentication · Search · Payments</div>
+<small>HTML · JS · MySQL</small>
+<ul>
+<li>Authentication</li>
+<li>Search & payments</li>
+</ul>
 </div>
 
-<div class="project">
+<div class="project-card">
 <h3>Customer Segmentation Analysis</h3>
-<small>Python · Pandas · Scikit-learn</small>
-<div class="tech">K-means clustering · Business insights</div>
+<small>Python · Scikit-learn</small>
+<ul>
+<li>K-means clustering</li>
+<li>Business insights</li>
+</ul>
 </div>
 
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section>
+<div class="container reveal">
+<h2 class="section-title">Contact</h2>
+<div class="contact">
+<div class="contact-card"><i class="fas fa-envelope"></i><p>aditjain042@gmail.com</p></div>
+<div class="contact-card"><i class="fas fa-phone"></i><p>+91 7300115590</p></div>
+<div class="contact-card"><i class="fab fa-linkedin"></i><p>linkedin.com/in/adit-jain2005</p></div>
+</div>
+</div>
 </section>
 
 <footer>
-© 2025 Adit Jain · Designed as a living resume
+© 2025 Adit Jain · Built with purpose
 </footer>
 
-</div>
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){e.target.classList.add('active')}
+})
+},{threshold:.15});
+reveals.forEach(r=>obs.observe(r));
+</script>
+
 </body>
 </html>
