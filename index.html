@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Adit Jain | Machine Learning Engineer</title>
 
 <!-- Fonts & Icons -->
@@ -29,7 +29,7 @@ overflow-x:hidden;
 
 .container{max-width:1100px;margin:auto;padding:80px 20px}
 
-/* ===== ANIMATION BASE ===== */
+/* ================== ANIMATIONS ================== */
 .reveal{
 opacity:0;
 transform:translateY(40px);
@@ -40,13 +40,13 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* ===== HEADER ===== */
+/* ================== HERO ================== */
 header{
 min-height:100vh;
 display:flex;
 align-items:center;
 background:
-radial-gradient(circle at 20% 20%,rgba(59,130,246,.15),transparent 40%),
+radial-gradient(circle at 20% 20%,rgba(59,130,246,.18),transparent 40%),
 radial-gradient(circle at 80% 80%,rgba(99,102,241,.15),transparent 40%);
 }
 
@@ -58,7 +58,7 @@ align-items:center;
 }
 
 .hero h1{
-font-size:3.4rem;
+font-size:3.2rem;
 font-weight:700;
 letter-spacing:-1px;
 }
@@ -76,8 +76,27 @@ max-width:520px;
 color:var(--muted);
 }
 
+/* ===== PHOTO ===== */
+.photo-wrapper{
+display:flex;
+justify-content:center;
+}
+.profile-photo{
+width:260px;
+height:260px;
+border-radius:22px;
+object-fit:cover;
+border:1px solid var(--border);
+box-shadow:0 30px 80px rgba(0,0,0,.4);
+transition:.6s;
+}
+.profile-photo:hover{
+transform:translateY(-6px) scale(1.02);
+}
+
+/* ===== ACTIONS ===== */
 .hero-actions{
-margin-top:26px;
+margin-top:28px;
 display:flex;
 gap:16px;
 flex-wrap:wrap;
@@ -85,13 +104,16 @@ flex-wrap:wrap;
 
 .btn{
 padding:12px 22px;
-border-radius:10px;
+border-radius:12px;
 border:1px solid var(--border);
 background:transparent;
 color:var(--text);
 text-decoration:none;
 font-weight:500;
 transition:.3s;
+display:inline-flex;
+align-items:center;
+gap:8px;
 }
 .btn.primary{
 background:var(--accent);
@@ -101,7 +123,7 @@ border-color:var(--accent);
 transform:translateY(-3px);
 }
 
-/* ===== SECTION ===== */
+/* ================== SECTION ================== */
 section{
 border-top:1px solid var(--border);
 }
@@ -110,7 +132,7 @@ font-size:2rem;
 margin-bottom:40px;
 }
 
-/* ===== EXPERIENCE ===== */
+/* ================== EXPERIENCE ================== */
 .timeline{
 display:grid;
 gap:30px;
@@ -119,7 +141,7 @@ gap:30px;
 background:var(--card);
 border:1px solid var(--border);
 padding:28px;
-border-radius:16px;
+border-radius:18px;
 transition:.4s;
 }
 .exp-card:hover{
@@ -131,7 +153,7 @@ border-color:var(--accent);
 .exp-card ul{margin-top:12px}
 .exp-card li{margin-left:18px;color:var(--muted);margin-bottom:6px}
 
-/* ===== SKILLS ===== */
+/* ================== SKILLS ================== */
 .skills{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -141,7 +163,7 @@ gap:24px;
 background:var(--card);
 border:1px solid var(--border);
 padding:26px;
-border-radius:16px;
+border-radius:18px;
 transition:.4s;
 }
 .skill-card:hover{
@@ -151,7 +173,7 @@ border-color:var(--accent);
 .skill-card h3{margin-bottom:14px;color:var(--accent)}
 .skill-card li{list-style:none;color:var(--muted);margin-bottom:6px}
 
-/* ===== PROJECTS ===== */
+/* ================== PROJECTS ================== */
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -161,7 +183,7 @@ gap:30px;
 background:linear-gradient(180deg,#0f172a,#020617);
 border:1px solid var(--border);
 padding:26px;
-border-radius:18px;
+border-radius:20px;
 transition:.5s;
 position:relative;
 overflow:hidden;
@@ -184,7 +206,7 @@ border-color:var(--accent);
 .project-card ul{margin-top:12px}
 .project-card li{margin-left:18px;color:var(--muted);margin-bottom:6px}
 
-/* ===== CONTACT ===== */
+/* ================== CONTACT ================== */
 .contact{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -193,22 +215,28 @@ gap:24px;
 .contact-card{
 background:var(--card);
 border:1px solid var(--border);
-padding:30px;
-border-radius:16px;
+padding:32px;
+border-radius:18px;
 text-align:center;
 transition:.4s;
+cursor:pointer;
 }
 .contact-card:hover{
 transform:translateY(-6px);
 border-color:var(--accent);
 }
 .contact-card i{
-font-size:2rem;
+font-size:2.2rem;
 color:var(--accent);
-margin-bottom:10px;
+margin-bottom:12px;
+}
+.contact-card a{
+color:var(--text);
+text-decoration:none;
+word-break:break-all;
 }
 
-/* ===== FOOTER ===== */
+/* ================== FOOTER ================== */
 footer{
 border-top:1px solid var(--border);
 text-align:center;
@@ -216,19 +244,26 @@ padding:40px 20px;
 color:var(--muted);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ================== RESPONSIVE ================== */
 @media(max-width:900px){
-.hero{grid-template-columns:1fr}
-.hero h1{font-size:2.6rem}
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+.photo-wrapper{order:-1}
+.hero h1{font-size:2.5rem}
+.profile-photo{width:220px;height:220px}
+.hero-actions{justify-content:center}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<!-- ================== HERO ================== -->
 <header>
 <div class="container hero reveal">
+
 <div>
 <h1>Adit Jain</h1>
 <h2>Machine Learning Engineer · Backend Developer</h2>
@@ -236,18 +271,31 @@ color:var(--muted);
 IBM SDE Intern & AI/ML Intern with hands-on experience building
 production-grade ML systems in healthcare and fintech.
 </p>
+
 <div class="hero-actions">
-<a class="btn primary" href="#projects">View Projects</a>
-<a class="btn" href="mailto:aditjain042@gmail.com">Contact Me</a>
+<a class="btn primary" href="#projects">
+<i class="fas fa-diagram-project"></i> View Projects
+</a>
+
+<!-- WORKING EMAIL (GMAIL / MOBILE MAIL APP) -->
+<a class="btn" href="mailto:aditjain042@gmail.com">
+<i class="fas fa-envelope"></i> Contact Me
+</a>
 </div>
 </div>
+
+<div class="photo-wrapper">
+<img src="images/profile.jpg" alt="Adit Jain" class="profile-photo">
+</div>
+
 </div>
 </header>
 
-<!-- EXPERIENCE -->
+<!-- ================== EXPERIENCE ================== -->
 <section>
 <div class="container reveal">
 <h2 class="section-title">Experience</h2>
+
 <div class="timeline">
 
 <div class="exp-card">
@@ -275,22 +323,35 @@ production-grade ML systems in healthcare and fintech.
 </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ================== SKILLS ================== -->
 <section>
 <div class="container reveal">
 <h2 class="section-title">Technical Skills</h2>
+
 <div class="skills">
-<div class="skill-card"><h3>Programming</h3><li>Python</li><li>Java</li><li>C / C++</li><li>MySQL</li></div>
-<div class="skill-card"><h3>Machine Learning</h3><li>Random Forest</li><li>XGBoost</li><li>NLP</li></div>
-<div class="skill-card"><h3>Frameworks</h3><li>Flask</li><li>Scikit-learn</li><li>Pandas</li></div>
+<div class="skill-card">
+<h3>Programming</h3>
+<li>Python</li><li>Java</li><li>C / C++</li><li>MySQL</li>
+</div>
+
+<div class="skill-card">
+<h3>Machine Learning</h3>
+<li>Random Forest</li><li>XGBoost</li><li>NLP</li>
+</div>
+
+<div class="skill-card">
+<h3>Frameworks</h3>
+<li>Flask</li><li>Scikit-learn</li><li>Pandas</li>
+</div>
 </div>
 </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ================== PROJECTS ================== -->
 <section id="projects">
 <div class="container reveal">
 <h2 class="section-title">Projects</h2>
+
 <div class="projects">
 
 <div class="project-card">
@@ -304,7 +365,7 @@ production-grade ML systems in healthcare and fintech.
 </div>
 
 <div class="project-card">
-<h3>Disease Prediction & Recommendation</h3>
+<h3>Disease Prediction & Medical Recommendation</h3>
 <small>Python · NLP · Random Forest</small>
 <ul>
 <li>88% accuracy</li>
@@ -316,14 +377,14 @@ production-grade ML systems in healthcare and fintech.
 <h3>Billing Management System</h3>
 <small>Java · MySQL</small>
 <ul>
-<li>1000+ transactions</li>
-<li>Profit/Loss analytics</li>
+<li>1000+ monthly transactions</li>
+<li>Profit & loss analytics</li>
 </ul>
 </div>
 
 <div class="project-card">
 <h3>E-commerce Website</h3>
-<small>HTML · JS · MySQL</small>
+<small>HTML · CSS · JavaScript · MySQL</small>
 <ul>
 <li>Authentication</li>
 <li>Search & payments</li>
@@ -343,14 +404,33 @@ production-grade ML systems in healthcare and fintech.
 </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ================== CONTACT ================== -->
 <section>
 <div class="container reveal">
 <h2 class="section-title">Contact</h2>
+
 <div class="contact">
-<div class="contact-card"><i class="fas fa-envelope"></i><p>aditjain042@gmail.com</p></div>
-<div class="contact-card"><i class="fas fa-phone"></i><p>+91 7300115590</p></div>
-<div class="contact-card"><i class="fab fa-linkedin"></i><p>linkedin.com/in/adit-jain2005</p></div>
+
+<!-- EMAIL -->
+<div class="contact-card" onclick="window.location.href='mailto:aditjain042@gmail.com'">
+<i class="fas fa-envelope"></i>
+<a href="mailto:aditjain042@gmail.com">aditjain042@gmail.com</a>
+</div>
+
+<!-- PHONE (WORKS ON MOBILE) -->
+<div class="contact-card" onclick="window.location.href='tel:+917300115590'">
+<i class="fas fa-phone"></i>
+<a href="tel:+917300115590">+91 7300115590</a>
+</div>
+
+<!-- LINKEDIN -->
+<div class="contact-card" onclick="window.open('https://www.linkedin.com/in/adit-jain2005','_blank')">
+<i class="fab fa-linkedin"></i>
+<a href="https://www.linkedin.com/in/adit-jain2005" target="_blank">
+linkedin.com/in/adit-jain2005
+</a>
+</div>
+
 </div>
 </div>
 </section>
@@ -360,13 +440,14 @@ production-grade ML systems in healthcare and fintech.
 </footer>
 
 <script>
+/* SCROLL REVEAL */
 const reveals=document.querySelectorAll('.reveal');
-const obs=new IntersectionObserver(entries=>{
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
 if(e.isIntersecting){e.target.classList.add('active')}
 })
 },{threshold:.15});
-reveals.forEach(r=>obs.observe(r));
+reveals.forEach(r=>observer.observe(r));
 </script>
 
 </body>
